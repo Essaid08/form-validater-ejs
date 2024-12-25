@@ -1,0 +1,60 @@
+<!-- views/createUser.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+      form {
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      form input {
+        height: 35px;
+      }
+      form button {
+        margin-top: 12px;
+        padding: 10px 15px;
+        font-weight: bolder;
+        cursor: pointer;
+      }
+      body a {
+        border: 1px solid blueviolet;
+        background-color: rgb(221, 212, 212);
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 15px ;
+        color: blue;
+        
+      }
+    </style>
+  </head>
+<body>
+  <h1><%= title %></h1>
+  <%- include("partials/error.ejs") %>
+  <form action="/create" method="POST">
+    <label for="firstName">First Name: </label>
+    <input type="text" name="firstName" id="firstName" required>
+    <label for="lastName">Last Name: </label>
+    <input type="text" name="lastName" id="lastName" required>
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email" required>
+    <label for="age">Age: </label>
+    <input type="number" name="age" id="age">
+    <label for="bio">Bio: </label>
+    <textarea name="bio" id="bio" rows="7" cols="40">
+      
+    </textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back to home</a>
+</body>
+</html>

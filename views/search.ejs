@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title><%= title %></title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			ul {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				justify-content: center;
+				align-items: center;
+			}
+			ul li {
+				padding: 10px 15px;
+				border: 1px solid black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+
+			form button {
+				margin-top: 12px;
+				padding: 10px 15px;
+				font-weight: bolder;
+				cursor: pointer;
+			}
+			body a {
+				border: 1px solid blueviolet;
+				background-color: rgb(221, 212, 212);
+				font-weight: bold;
+				text-decoration: none;
+				padding: 10px 15px;
+				color: blue;
+				margin-top: 5px;
+			}
+			form input {
+				height: 35px;
+				width: 350px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<h2>Search users by name</h2>
+		<%- include("partials/error.ejs") %>
+		<form
+			action="/search"
+			method="post">
+			<input
+				type="text"
+				name="search"
+				id="search"
+				placeholder="Enter user name"
+				required />
+			<button type="submit">Search</button>
+		</form>
+		<%- include("partials/searchList.ejs") %>
+		<a href="/">Back to home</a>
+	</body>
+</html>
